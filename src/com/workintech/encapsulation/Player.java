@@ -8,6 +8,16 @@ public class Player {
     public Player(String name, int healthPercentage, Weapon weapon){
         this.name = name;
         this.healthPercentage = healthPercentage;
+        checkHealth(healthPercentage);
         this.weapon = weapon;
+    }
+
+    private void checkHealth (int healthPercentage){
+        if(healthPercentage < 0){
+            this.healthPercentage = 0;
+        }
+        if (healthPercentage > 100){
+            this.healthPercentage = 100;
+        }
     }
 }
